@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Upload Fichier</title>
+    <style>
+        button {
+            font-size: 1.2em;
+            padding: 12px 28px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test d'Upload de Fichier</h1>
+    <form id="uploadForm" enctype="multipart/form-data" method="post">
+        <input type="file" id="fileInput" name="file">
+        <button type="button" id="uploadBtn">Uploader</button>
+    </form>
+
+    <script>
+        document.getElementById('uploadBtn').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function() {
+            if (this.files[0].size > 0) {
+                document.title = 'Success';
+            }
+        });
+    </script>
+</body>
+</html>
