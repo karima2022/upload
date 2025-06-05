@@ -28,6 +28,10 @@
         document.getElementById('fileInput').addEventListener('change', function() {
             if (this.files[0].size > 0) {
                 document.title = 'Success';
+            }else if (this.files[0].size === 0) {
+                document.title = 'Empty';
+            }else {
+                document.title = 'Error';
             }
         });
     </script>
